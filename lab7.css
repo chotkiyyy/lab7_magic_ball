@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0b0f19;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.input-wrapper {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 80%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #cfb6ff;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+    box-shadow: 0 0 15px rgba(230, 217, 255, 0.2);
+}
+
+.error-msg {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-top: 10px;
+    height: 16px;
+}
+
+.ball {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #5f0adf, #8a2c2c, #3a0202);
+    border: 3px solid #2b0741;
+    box-shadow: 
+        0 0 40px rgba(161, 28, 5, 0.3), 
+        inset -20px -20px 40px rgba(0, 0, 0, 0.9), 
+        inset 10px 10px 30px rgba(167, 105, 105, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.1s ease;
+}
+
+.ball:active {
+    transform: scale(0.95);
+}
+
+.ball-inner {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(231, 228, 228, 0.15) 0%, rgba(20,10,40,0.6) 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.answer {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e6d9ff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #cda4ff;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.answer.show {
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .ball {
+        width: 240px;
+        height: 240px;
+    }
+    .ball-inner {
+        width: 130px;
+        height: 130px;
+    }
+    .answer {
+        font-size: 22px;
+    }
+    input {
+        width: 95%;
+        font-size: 16px;
+    }
+}
